@@ -8,7 +8,7 @@ def checkout(String GIT_URL, String BRANCH, String GIT_CREDENTIALS)
 {
    try {
       wrap([$class: 'AnsiColorBuildWrapper']) {
-        if ( "${env.BRANCH_NAME}" == "null" ) {
+        if ( "${env.BRANCH_NAME}" != "null" ) {
            BRANCH = "${env.BRANCH_NAME}"
         }
         println "\u001B[32mINFO: cloning code from git repository $GIT_URL and branch $BRANCH, please wait..."
