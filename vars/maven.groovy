@@ -17,8 +17,8 @@ def call(body)
           g.checkout("${config.GIT_URL}","${config.BRANCH}","${config.GIT_CREDENTIALS}")
         }
         stage("\u2777 Code Compile") {
-          def b = new maven()
-          b.mvnCompile("${config.POM_FILE}","${config.MVN_GOALS}")
+          def b = new mavenBuild()
+          b.compile("${config.POM_FILE}","${config.MVN_GOALS}")
         }
       }
       catch (Exception e) {
