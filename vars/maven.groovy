@@ -18,7 +18,7 @@ def call(body)
         }
         stage("\u2777 Code Compile") {
           def b = new maven()
-          b.compile("${config.POM_FILE}","${config.MVN_GOALS}")
+          b.mvnCompile("${config.POM_FILE}","${config.MVN_GOALS}")
         }
       }
       catch (Exception e) {
