@@ -4,7 +4,7 @@ package com.navdeep.devops.build
 /***********************************
 ***** function to compile code *****
 ************************************/
-def compile(String POM_FILE, String MVN_GOALS)
+def mvnCompile(String POM_FILE, String MVN_GOALS)
 {
    try {
       MAVEN_HOME=tool name: 'MAVEN3', type: 'maven'
