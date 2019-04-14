@@ -15,6 +15,10 @@ def call(body)
           def g = new git()
           g.checkout("${config.GIT_URL}","${config.BRANCH}","${config.GIT_CREDENTIALS}")
         }
+        stage("\u2777 Code Compile") {
+          def b = new maven()
+          b.compile("${config.POM_FILE}","${config.MVN_GOALS}")
+        }
       }
       catch (Exception e) {
         wrap([$class: "AnsiColorBuildWrapper"]) {
