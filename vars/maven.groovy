@@ -1,6 +1,6 @@
 #!groovy
 
-import com.navdeep.devops.scm
+import com.navdeep.devops.scm.*
 
 def call(body)
 {
